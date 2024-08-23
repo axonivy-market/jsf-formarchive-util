@@ -14,7 +14,7 @@ This utility adds a snapshot of submitted jsf dialog froms to case documents.
 
 Just submit the form and you will find a snapshot of the form in the case documents on the case detail page.
 
-
+   ![Archived-Sample-Dialog](images/ArchivedSampleDialog.png)
 
 ## Setup
 
