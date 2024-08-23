@@ -1,0 +1,8 @@
+Data #class
+jsf.form.archiv #namespace
+remarks String #field
+remarks PERSISTENT #fieldModifier
+item String #field
+item PERSISTENT #fieldModifier
+amount Number #field
+amount PERSISTENT #fieldModifier

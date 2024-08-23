@@ -1,0 +1,71 @@
+{
+  "format" : "10.0.0",
+  "id" : "191767AC8BC4F5B8",
+  "config" : {
+    "data" : "jsf.form.archive.util.test.Data"
+  },
+  "elements" : [ {
+      "id" : "f0",
+      "type" : "RequestStart",
+      "name" : "start.ivp",
+      "config" : {
+        "callSignature" : "start",
+        "task" : {
+          "name" : "InitTask"
+        },
+        "outLink" : "start.ivp",
+        "case" : { }
+      },
+      "visual" : {
+        "at" : { "x" : 96, "y" : 64 }
+      },
+      "connect" : { "id" : "f3", "to" : "f4" }
+    }, {
+      "id" : "f1",
+      "type" : "TaskEnd",
+      "visual" : {
+        "at" : { "x" : 512, "y" : 64 }
+      }
+    }, {
+      "id" : "f4",
+      "type" : "DialogCall",
+      "name" : [
+        "OrderRequest ",
+        "Form1"
+      ],
+      "config" : {
+        "dialogId" : "jsf.form.archiv.test.Form1",
+        "startMethod" : "start(jsf.form.archive.util.test.Data)",
+        "output" : {
+          "map" : {
+            "out" : "result.data"
+          }
+        },
+        "call" : {
+          "params" : [
+            { "name" : "data", "type" : "jsf.form.archive.util.test.Data" }
+          ],
+          "map" : {
+            "param.data" : "in"
+          }
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 224, "y" : 64 },
+        "size" : { "width" : 128, "height" : 60 }
+      },
+      "connect" : { "id" : "f5", "to" : "f2" }
+    }, {
+      "id" : "f2",
+      "type" : "DialogCall",
+      "name" : "FormArchive",
+      "config" : {
+        "dialogId" : "jsf.form.archiv.test.FormArchive",
+        "startMethod" : "start()"
+      },
+      "visual" : {
+        "at" : { "x" : 392, "y" : 64 }
+      },
+      "connect" : { "id" : "f6", "to" : "f1" }
+    } ]
+}
