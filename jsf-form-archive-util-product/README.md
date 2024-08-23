@@ -6,7 +6,7 @@ When you create your very valuable documentation, please be aware that this Read
 
 # JSF Form Archive Utility
 
-This utility adds a snapshot of submitted jsf dialog to case documents.
+This utility adds a snapshot of submitted jsf dialogs to case documents.
 
 
 
