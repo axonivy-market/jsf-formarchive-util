@@ -15,7 +15,7 @@ import com.axonivy.ivy.webtest.engine.EngineUrl;
  * Test archived jsf page
  */
 @IvyWebTest(headless = true)
-public class FormArchiveWebTest{
+public class FormArchiveWebTestIT{
 
   @Test
   public void navigateToInfoPage(){
