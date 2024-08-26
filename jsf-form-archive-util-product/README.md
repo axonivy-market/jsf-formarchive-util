@@ -16,6 +16,8 @@ Just submit the form and you will find a snapshot of the form in the case docume
 
    ![Archived-Sample-Dialog](images/ArchivedSampleDialog.png)
 
+   ![Case-Documents-Dialog](images/CaseDocuments.png)
+
 ## Setup
 
 To make use of this utility you have to adapt the "submit" commandButton in the dialogs in your process that you want to have archived. 
