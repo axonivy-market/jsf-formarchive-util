@@ -30,3 +30,4 @@ to
   <p:commandButton oncomplete="if(!args.validationFailed){saveCanvas()}" value="Proceed" />
   <ui:include src="/includes/save-canvas.xhtml" />
   ```
+Maybe you want to create a new View Type in the HTML Template preferences in your designer with this modification.
