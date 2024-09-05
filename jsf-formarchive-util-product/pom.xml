@@ -6,7 +6,7 @@
   <packaging>pom</packaging>
 
   <properties>
-    <variables.yaml.file>../jsf-form-archive-util/config/variables.yaml</variables.yaml.file>
+    <variables.yaml.file>../jsf-formarchive-util/config/variables.yaml</variables.yaml.file>
   </properties>
 
   <build>
