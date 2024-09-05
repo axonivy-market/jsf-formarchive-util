@@ -28,7 +28,7 @@ public class FormArchiveWebTestIT{
   @Test
   public void runProcessWithArchivedForm() {
     // valid links can be copied from the start page of the internal web-browser
-    open(EngineUrl.createProcessUrl("jsf-form-archive-util-test/191767AC8BC4F5B8/start.ivp"));
+    open(EngineUrl.createProcessUrl("jsf-formarchive-util-test/191767AC8BC4F5B8/start.ivp"));
 
     // fill new customer form
     $(By.id("form:items")).sendKeys("Unit");

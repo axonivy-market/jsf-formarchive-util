@@ -1,20 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
-        
-    <wb-module deploy-name="jsf-form-archive-util">
-                
-        <wb-resource deploy-path="/" source-path="/webContent" tag="defaultRootSource"/>
-                
-        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
-                
-        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src_hd"/>
-                
-        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src_wsproc"/>
-                
-        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src_dataClasses"/>
-                
-        <property name="java-output-path" value="/jsf-form-archive-util/target/classes"/>
-        <property name="context-root" value="jsf-form-archive-util"/>
             
-    </wb-module>
     
+    <wb-module deploy-name="jsf-formarchive-util">
+                        
+        
+        <wb-resource deploy-path="/" source-path="/webContent" tag="defaultRootSource"/>
+                        
+        
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
+                        
+        
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src_hd"/>
+                        
+        
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src_wsproc"/>
+                        
+        
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src_dataClasses"/>
+                        
+        
+        <property name="java-output-path" value="/jsf-formarchive-util/target/classes"/>
+        <property name="context-root" value="jsf-formarchive-util"/>
+                    
+    
+    </wb-module>
+        
+
 </project-modules>
