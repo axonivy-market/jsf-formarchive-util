@@ -1,7 +1,7 @@
-# MY-PRODUCT-NAME
+# JSF Form Archive Utility
 
-[![CI Build](https://github.com/axonivy-market/REPO-NAME/actions/workflows/ci.yml/badge.svg)](https://github.com/axonivy-market/REPO-NAME/actions/workflows/ci.yml)
+[![CI Build](https://github.com/axonivy-market/jsf-formarchive-util/actions/workflows/ci.yml/badge.svg)](https://github.com/axonivy-market/jsf-formarchive-util/actions/workflows/ci.yml)
 
-"YOUR SHORT DESCRIPTION GOES HERE"
+This utility adds a snapshot of submitted jsf dialogs to case documents.
 
-Read our [documentation](MY-PRODUCT-NAME-product/README.md).
+Read our [documentation](jsf-form-archive-util-product/README.md).
