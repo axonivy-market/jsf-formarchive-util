@@ -6,9 +6,10 @@ When you create your very valuable documentation, please be aware that this Read
 
 # JSF Form Archive Utility
 
-This utility adds a snapshot of submitted jsf dialogs to case documents. After a form has been submitted you will find the created snapshot image on the case detail page. The task name will be taken as document name.
+With this utility you can take snapshots of your JSF UIs and thus archive in a user-friendly way which (user) inputs were made at certain points in time. 
 
-
+- After a form has been submitted you will find the created snapshot image on the case detail page.
+- The task name will be taken as image name.
 
 ## Demo
 
