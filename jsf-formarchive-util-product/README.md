@@ -18,11 +18,11 @@ Just submit the form and you will find a snapshot of the form in the case docume
 To make use of this utility you have to adapt the "submit" commandButton in the dialogs in your process that you want to have archived. 
 Change the default commandButton, that may look like
   ```
-  <p:commandButton actionListener="#{logic.close}" value="Proceed" update="form" icon="pi pi-check" />
+  <p:commandButton actionListener="#{logic.close()}" value="Proceed" update="form" icon="pi pi-check" />
   ``` 
 to
   ```
   <p:commandButton oncomplete="if(!args.validationFailed){saveCanvas()}" value="Proceed" />
-  <ui:include src="/includes/save-canvas.xhtml" />
+  <ic:jsf.form.archive.util.SaveCanvas form="form" submitListener="#{logic.close()}" />
   ```
 Maybe you want to create a new View Type in the HTML Template preferences in your designer with this modification.
