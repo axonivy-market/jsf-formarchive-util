@@ -1,0 +1,47 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:ic="http://ivyteam.ch/jsf/component"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:pe="http://primefaces.org/ui/extensions">
+<h:body>
+	<ui:composition template="/layouts/frame-10.xhtml">
+		<ui:define name="title">#{ivy.cms.co('/Dialogs/jsf/form/archive/util/demo/OrderRequest/OrderRequest')}</ui:define>
+		<ui:define name="content">
+			<h3>#{ivy.cms.co('/Dialogs/jsf/form/archive/util/demo/OrderRequest/Header')}</h3>
+			<h:form id="form">
+				<p:messages />
+				<p:panelGrid columns="2" layout="grid"
+					styleClass="ui-panelgrid-blank ui-fluid"
+					columnClasses="ui-g-12 ui-md-3 ui-lg-2, ui-g-12 ui-md-9 ui-lg-4, ui-g-12 ui-md-3 ui-lg-2, ui-g-12 ui-md-9 ui-lg-4">
+					<p:outputLabel for="ivy-cockpit"
+						value="#{ivy.cms.co('/Dialogs/jsf/form/archive/util/demo/OrderRequest/SampleImage')}" />
+					<h:graphicImage id="ivy-cockpit" name="image/ivyCockpit.png"
+						alt="#{ivy.cms.co('/Dialogs/jsf/form/archive/util/demo/OrderRequest/MyImage')}" />
+
+					<p:outputLabel for="data-item"
+						value="#{ivy.cms.co('/Labels/Items')}" />
+					<p:inputText id="data-item" value="#{data.data.item}" />
+
+					<p:outputLabel for="data-amount"
+						value="#{ivy.cms.co('/Labels/Amount')}" />
+					<p:inputNumber id="data-amount" value="#{data.data.amount}" />
+
+				</p:panelGrid>
+				<br />
+				<div class="command-btns">
+					<p:commandLink id="cancel"
+						actionListener="#{ivyWorkflowView.cancel()}" process="@this"
+						value="#{ivy.cms.co('/Labels/Cancel')}" />
+					<p:commandButton id="send"
+						oncomplete="if(!args.validationFailed){saveCanvas()}"
+						value="#{ivy.cms.co('/Labels/Send')}" icon="pi pi-arrow-right"/>
+					<ic:jsf.form.archive.util.SaveCanvas form="form"
+						submitListener="#{logic.close()}" />
+				</div>
+			</h:form>
+		</ui:define>
+	</ui:composition>
+</h:body>
+</html>

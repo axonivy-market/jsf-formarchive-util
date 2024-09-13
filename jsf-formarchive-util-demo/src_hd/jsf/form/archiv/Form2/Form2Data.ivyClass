@@ -1,4 +1,0 @@
-Form2Data #class
-jsf.form.archiv.Form2 #namespace
-data jsf.form.archiv.Data #field
-data PERSISTENT #fieldModifier

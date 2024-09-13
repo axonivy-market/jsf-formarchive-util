@@ -1,4 +1,0 @@
-Form1Data #class
-jsf.form.archiv.test.Form1 #namespace
-data jsf.form.archive.util.test.Data #field
-data PERSISTENT #fieldModifier

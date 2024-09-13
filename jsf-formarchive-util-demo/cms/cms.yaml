@@ -23,9 +23,3 @@ Labels:
   Items: Items
   OK: OK
   Send: Send
-Processes:
-  Order:
-    Tasks:
-      Approval:
-        name: Approval task
-    name: Demo attach the request form to case doc

@@ -1,4 +1,0 @@
-ddData #class
-jsf.form.archiv.dd #namespace
-data jsf.form.archiv.Data #field
-data PERSISTENT #fieldModifier

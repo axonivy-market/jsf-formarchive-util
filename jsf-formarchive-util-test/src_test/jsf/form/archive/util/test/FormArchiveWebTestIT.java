@@ -12,33 +12,33 @@ import com.axonivy.ivy.webtest.IvyWebTest;
 import com.axonivy.ivy.webtest.engine.EngineUrl;
 
 /**
- * Test archived jsf page
+ * Test archived JSF page
  */
-@IvyWebTest(headless = true)
-public class FormArchiveWebTestIT{
+@IvyWebTest
+public class FormArchiveWebTestIT {
 
-  @Test
-  public void navigateToInfoPage(){
-    open(EngineUrl.base());
+	@Test
+	public void navigateToInfoPage() {
+		open(EngineUrl.base());
 
-    $("img").shouldBe(attribute("alt", "Logo"));
-    $(By.tagName("img")).shouldBe(attribute("alt", "Logo"));
-  }
+		$("img").shouldBe(attribute("alt", "Logo"));
+		$(By.tagName("img")).shouldBe(attribute("alt", "Logo"));
+	}
 
-  @Test
-  public void runProcessWithArchivedForm() {
-    // valid links can be copied from the start page of the internal web-browser
-    open(EngineUrl.createProcessUrl("jsf-formarchive-util-test/191767AC8BC4F5B8/start.ivp"));
+	@Test
+	public void runProcessWithArchivedForm() {
+		// valid links can be copied from the start page of the internal web-browser
+		open(EngineUrl.createProcessUrl("jsf-formarchive-util-test/191767AC8BC4F5B8/start.ivp"));
 
-    // fill new customer form
-    $(By.id("form:items")).sendKeys("Unit");
-    $(By.id("form:amount_input")).sendKeys("123");
+		// fill new customer form
+		$(By.id("form:data-item")).sendKeys("Unit");
+		$(By.id("form:data-amount_input")).sendKeys("123");
 
-    // verify that the submit button is enabled, before clicking it.
-    $(By.id("form:send")).shouldBe(enabled).click();
+		// verify that the submit button is enabled, before clicking it.
+		$(By.id("form:send")).shouldBe(enabled).click();
 
-    //verify that screenshot of form1 is present
-    $(By.id("InitTask.bmp")).shouldBe(attribute("id", "InitTask.bmp"));
-  }
+		// verify that screenshot of form1 is present
+		$(By.id("InitTask.bmp")).shouldBe(attribute("id", "InitTask.bmp"));
+	}
 
-} 
+}

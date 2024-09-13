@@ -2,7 +2,7 @@
   "format" : "10.0.0",
   "id" : "166EDFBCF2BF8C6E",
   "config" : {
-    "data" : "jsf.form.archiv.Data"
+    "data" : "jsf.form.archive.util.demo.Data"
   },
   "elements" : [ {
       "id" : "f0",
@@ -15,11 +15,12 @@
         },
         "outLink" : "start.ivp",
         "wfuser" : "1",
+        "startName" : "<%=ivy.cms.co(\"/Processes/Order/name\")%>",
         "tags" : "demo",
         "case" : { }
       },
       "visual" : {
-        "at" : { "x" : 96, "y" : 64 },
+        "at" : { "x" : 128, "y" : 224 },
         "labelOffset" : { "x" : 8, "y" : 37 }
       },
       "connect" : { "id" : "f4", "to" : "f3" }
@@ -27,18 +28,15 @@
       "id" : "f1",
       "type" : "TaskEnd",
       "visual" : {
-        "at" : { "x" : 704, "y" : 64 }
+        "at" : { "x" : 800, "y" : 224 }
       }
     }, {
       "id" : "f3",
       "type" : "DialogCall",
-      "name" : [
-        "OrderRequest ",
-        "Form1"
-      ],
+      "name" : "OrderRequest",
       "config" : {
-        "dialogId" : "jsf.form.archiv.Form1",
-        "startMethod" : "start(jsf.form.archiv.Data)",
+        "dialogId" : "jsf.form.archive.util.demo.OrderRequest",
+        "startMethod" : "start(jsf.form.archive.util.demo.Data)",
         "output" : {
           "map" : {
             "out" : "result.data"
@@ -46,7 +44,7 @@
         },
         "call" : {
           "params" : [
-            { "name" : "data", "type" : "jsf.form.archiv.Data" }
+            { "name" : "data", "type" : "jsf.form.archive.util.demo.Data" }
           ],
           "map" : {
             "param.data" : "in"
@@ -54,7 +52,7 @@
         }
       },
       "visual" : {
-        "at" : { "x" : 216, "y" : 64 },
+        "at" : { "x" : 288, "y" : 224 },
         "size" : { "width" : 128, "height" : 60 }
       },
       "connect" : { "id" : "f12", "to" : "f11" }
@@ -63,36 +61,33 @@
       "type" : "DialogCall",
       "name" : "Show archived forms",
       "config" : {
-        "dialogId" : "jsf.form.archiv.FormArchive",
+        "dialogId" : "jsf.form.archive.util.demo.FormArchive",
         "startMethod" : "start()"
       },
       "visual" : {
-        "at" : { "x" : 552, "y" : 64 },
+        "at" : { "x" : 664, "y" : 224 },
         "size" : { "width" : 144, "height" : 60 }
       },
       "connect" : { "id" : "f2", "to" : "f1" }
     }, {
       "id" : "f11",
       "type" : "UserTask",
-      "name" : [
-        "ApprovalTask",
-        "Form2"
-      ],
+      "name" : "ApprovalTask",
       "config" : {
-        "dialogId" : "jsf.form.archiv.Form2",
-        "startMethod" : "start(jsf.form.archiv.Data)",
+        "dialogId" : "jsf.form.archive.util.demo.ApprovalTask",
+        "startMethod" : "start(jsf.form.archive.util.demo.Data)",
         "output" : {
           "map" : {
             "out" : "result.data"
           }
         },
         "task" : {
-          "name" : "ApprovalTask",
+          "name" : "<%=ivy.cms.co(\"/Processes/Order/Tasks/Approval/name\")%>",
           "skipTasklist" : true
         },
         "call" : {
           "params" : [
-            { "name" : "data", "type" : "jsf.form.archiv.Data" }
+            { "name" : "data", "type" : "jsf.form.archive.util.demo.Data" }
           ],
           "map" : {
             "param.data" : "in"
@@ -100,8 +95,24 @@
         }
       },
       "visual" : {
-        "at" : { "x" : 376, "y" : 64 }
+        "at" : { "x" : 472, "y" : 224 }
       },
       "connect" : { "id" : "f6", "to" : "f5" }
+    }, {
+      "id" : "f7",
+      "type" : "ProcessAnnotation",
+      "name" : [
+        "This demo adds a snapshot of submitted JSF dialogs to case documents.",
+        "After submitting a form, you will find the created snapshot image on the case detail page.",
+        "The task name will be taken as the document name.",
+        "",
+        "## Demo",
+        "Just submit the form and you will find a snapshot of the form in the case documents on the case detail page."
+      ],
+      "visual" : {
+        "at" : { "x" : 452, "y" : 80 },
+        "size" : { "width" : 772, "height" : 132 }
+      },
+      "connect" : { "id" : "f8", "to" : "f0" }
     } ]
 }

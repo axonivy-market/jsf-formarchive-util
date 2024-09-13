@@ -7,32 +7,32 @@
   <version>10.0.0-SNAPSHOT</version>
   <packaging>iar-integration-test</packaging>
   <properties>
-    <project.build.plugin.version>10.0.16</project.build.plugin.version>
     <tester.version>10.0.16</tester.version>
+    <project.build.plugin.version>10.0.16</project.build.plugin.version>
   </properties>
-  <pluginRepositories>
-    <pluginRepository>
-      <id>sonatype</id>
-      <url>https://oss.sonatype.org/content/repositories/snapshots</url>
-      <snapshots>
-        <updatePolicy>always</updatePolicy>
-      </snapshots>
-    </pluginRepository>
-  </pluginRepositories>
   <dependencies>
-    <dependency>
-      <groupId>com.axonivy.utils.jsfformarchive</groupId>
-      <artifactId>jsf-form-archive-util</artifactId>
-      <version>${project.version}</version>
-      <type>iar</type>
-    </dependency>
     <dependency>
       <groupId>com.axonivy.ivy.webtest</groupId>
       <artifactId>web-tester</artifactId>
       <version>${tester.version}</version>
       <scope>test</scope>
     </dependency>
+    <dependency>
+      <groupId>com.axonivy.utils.jsfformarchive</groupId>
+      <artifactId>jsf-form-archive-util-demo</artifactId>
+      <version>${project.version}</version>
+      <type>iar</type>
+    </dependency>
   </dependencies>
+  <pluginRepositories>
+    <pluginRepository>
+      <snapshots>
+        <updatePolicy>always</updatePolicy>
+      </snapshots>
+      <id>sonatype</id>
+      <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+    </pluginRepository>
+  </pluginRepositories>
   <build>
     <testSourceDirectory>src_test</testSourceDirectory>
     <plugins>
