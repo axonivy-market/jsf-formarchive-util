@@ -1,0 +1,25 @@
+Dialogs:
+  jsf:
+    form:
+      archive:
+        util:
+          demo:
+            ApprovalTask:
+              ApprovalTask: Approval task
+              Header: If approved, this JSF form will be archived in case documents.
+            FormArchive:
+              FormArchive: Form Archive
+              Header: Archived forms in case documents
+            OrderRequest:
+              Header: This is a JSF Dialog that will be archived in case documents on submit.
+              MyImage: My image
+              OrderRequest: Order request
+              SampleImage: Sample image
+Labels:
+  Amount: Amount
+  Approval: Approval
+  Approved: Approved
+  Cancel: Cancel
+  Items: Items
+  OK: OK
+  Send: Send

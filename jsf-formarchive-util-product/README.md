@@ -1,9 +1,3 @@
-<!--
-Dear developer!     
-
-When you create your very valuable documentation, please be aware that this Readme.md is not only published on github. This documentation is also processed automatically and published on our website. For this to work, the two headings "Demo" and "Setup" must not be changed
--->
-
 # JSF Form Archive Utility
 
 With this utility you can take snapshots of your JSF UIs and thus archive in a user-friendly way which (user) inputs were made at certain points in time. 
@@ -24,11 +18,11 @@ Just submit the form and you will find a snapshot of the form in the case docume
 To make use of this utility you have to adapt the "submit" commandButton in the dialogs in your process that you want to have archived. 
 Change the default commandButton, that may look like
   ```
-  <p:commandButton actionListener="#{logic.close}" value="Proceed" update="form" icon="pi pi-check" />
+  <p:commandButton actionListener="#{logic.close()}" value="Proceed" update="form" icon="pi pi-check" />
   ``` 
 to
   ```
   <p:commandButton oncomplete="if(!args.validationFailed){saveCanvas()}" value="Proceed" />
-  <ui:include src="/includes/save-canvas.xhtml" />
+  <ic:jsf.form.archive.util.SaveCanvas form="form" submitListener="#{logic.close()}" />
   ```
 Maybe you want to create a new View Type in the HTML Template preferences in your designer with this modification.
