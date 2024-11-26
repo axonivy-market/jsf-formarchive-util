@@ -1,0 +1,11 @@
+{
+  "$schema" : "https://json-schema.axonivy.com/data-class/12.0.0/data-class.json",
+  "simpleName" : "OrderRequestData",
+  "namespace" : "jsf.form.archive.util.demo.OrderRequest",
+  "isBusinessCaseData" : false,
+  "fields" : [ {
+    "name" : "data",
+    "type" : "jsf.form.archive.util.demo.Data",
+    "modifiers" : [ "PERSISTENT" ]
+  } ]
+}

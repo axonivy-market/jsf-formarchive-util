@@ -1,6 +1,0 @@
-Data #class
-jsf.form.archive.util.test #namespace
-items String #field
-items PERSISTENT #fieldModifier
-amount Number #field
-amount PERSISTENT #fieldModifier

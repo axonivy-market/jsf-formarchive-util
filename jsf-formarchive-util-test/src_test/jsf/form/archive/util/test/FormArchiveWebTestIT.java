@@ -38,7 +38,8 @@ public class FormArchiveWebTestIT {
 		$(By.id("form:send")).shouldBe(enabled).click();
 
 		// verify that screenshot of form1 is present
-		$(By.id("InitTask.bmp")).shouldBe(attribute("id", "InitTask.bmp"));
+		$(By.xpath("//img[@alt='InitTask.bmp']")).shouldBe(attribute("alt", "InitTask.bmp"));
+//		$(By.xpath("//img[@alt='InitTask.bmp']")).shouldBe(visible);
 	}
 
 }
