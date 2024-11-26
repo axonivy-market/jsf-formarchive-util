@@ -8,8 +8,8 @@ on:
 
 jobs:
   build:
-    uses: axonivy-market/github-workflows/.github/workflows/dev.yml@v4
+    uses: axonivy-market/github-workflows/.github/workflows/dev.yml@v5
     with:
       ivyVersion: nightly-10
-      ivyPluginVersion: 10.0.16
-      testerVersion: 10.0.16
+      ivyPluginVersion: 12.0.0
+      testerVersion: 12.0.0
