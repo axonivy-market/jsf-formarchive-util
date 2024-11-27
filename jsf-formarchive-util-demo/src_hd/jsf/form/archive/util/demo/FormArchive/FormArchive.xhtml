@@ -15,7 +15,7 @@
 				value="#{ivy.case.documents().all}" var="caseDoc">
 				<p:tab
 					title="#{caseDoc.name} #{caseDoc.creation.timestamp} #{caseDoc.creation.userName}">
-					<img id="#{caseDoc.name}" src="#{ivy.html.fileref(caseDoc.path, false)}"
+					<p:graphicImage value="#{caseDoc.read().asStream()}" stream="false"
 						alt="#{caseDoc.name}" width="100%" />
 				</p:tab>
 			</p:accordionPanel>

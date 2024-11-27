@@ -1,4 +1,0 @@
-ApprovalTaskData #class
-jsf.form.archive.util.demo.ApprovalTask #namespace
-data jsf.form.archive.util.demo.Data #field
-data PERSISTENT #fieldModifier

@@ -3,7 +3,9 @@ package com.axonivy.utils.jsfformarchiveutil.bean;
 import static org.apache.commons.lang3.StringUtils.EMPTY;
 
 import java.io.ByteArrayInputStream;
+import java.util.ArrayList;
 import java.util.Base64;
+import java.util.List;
 import java.util.function.Predicate;
 
 import javax.faces.bean.ManagedBean;
@@ -41,7 +43,8 @@ public class FormArchiveBean {
 			}
 			documentName = documentName + BMP_EXTENSION;
 			byte[] imageData = Base64.getDecoder().decode(content.substring(content.indexOf(COMMA) + 1));
-			getCurrentCaseDocuments().getAll().removeIf(filterByDocumentName(documentName));
+			List<IDocument> documents = new ArrayList<>(getCurrentCaseDocuments().getAll());
+			documents.removeIf(filterByDocumentName(documentName));
 			addNewDocToCurrentCase(documentName, imageData);
 		}
 	}

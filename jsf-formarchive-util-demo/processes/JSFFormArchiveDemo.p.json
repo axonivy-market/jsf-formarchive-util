@@ -1,5 +1,5 @@
 {
-  "format" : "10.0.0",
+  "$schema" : "https://json-schema.axonivy.com/process/12.0.0/process.json",
   "id" : "166EDFBCF2BF8C6E",
   "config" : {
     "data" : "jsf.form.archive.util.demo.Data"
@@ -9,21 +9,27 @@
       "type" : "RequestStart",
       "name" : "start.ivp",
       "config" : {
-        "callSignature" : "start",
+        "signature" : "start",
+        "request" : {
+          "name" : "<%=ivy.cms.co(\"/Processes/Order/name\")%>"
+        },
+        "permission" : {
+          "anonymous" : false
+        },
         "task" : {
           "name" : "OrderRequest"
-        },
-        "outLink" : "start.ivp",
-        "wfuser" : "1",
-        "startName" : "<%=ivy.cms.co(\"/Processes/Order/name\")%>",
-        "tags" : "demo",
-        "case" : { }
+        }
       },
+      "tags" : [
+        "demo"
+      ],
       "visual" : {
         "at" : { "x" : 128, "y" : 224 },
         "labelOffset" : { "x" : 8, "y" : 37 }
       },
-      "connect" : { "id" : "f4", "to" : "f3" }
+      "connect" : [
+        { "id" : "f4", "to" : "f3" }
+      ]
     }, {
       "id" : "f1",
       "type" : "TaskEnd",
@@ -35,69 +41,66 @@
       "type" : "DialogCall",
       "name" : "OrderRequest",
       "config" : {
-        "dialogId" : "jsf.form.archive.util.demo.OrderRequest",
-        "startMethod" : "start(jsf.form.archive.util.demo.Data)",
+        "dialog" : "jsf.form.archive.util.demo.OrderRequest:start(jsf.form.archive.util.demo.Data)",
+        "call" : {
+          "map" : {
+            "param.data" : "in"
+          }
+        },
         "output" : {
           "map" : {
             "out" : "result.data"
-          }
-        },
-        "call" : {
-          "params" : [
-            { "name" : "data", "type" : "jsf.form.archive.util.demo.Data" }
-          ],
-          "map" : {
-            "param.data" : "in"
           }
         }
       },
       "visual" : {
         "at" : { "x" : 288, "y" : 224 },
-        "size" : { "width" : 128, "height" : 60 }
+        "size" : { "width" : 128 }
       },
-      "connect" : { "id" : "f12", "to" : "f11" }
+      "connect" : [
+        { "id" : "f12", "to" : "f11" }
+      ]
     }, {
       "id" : "f5",
       "type" : "DialogCall",
       "name" : "Show archived forms",
       "config" : {
-        "dialogId" : "jsf.form.archive.util.demo.FormArchive",
-        "startMethod" : "start()"
+        "dialog" : "jsf.form.archive.util.demo.FormArchive:start()"
       },
       "visual" : {
         "at" : { "x" : 664, "y" : 224 },
-        "size" : { "width" : 144, "height" : 60 }
+        "size" : { "width" : 144 }
       },
-      "connect" : { "id" : "f2", "to" : "f1" }
+      "connect" : [
+        { "id" : "f2", "to" : "f1" }
+      ]
     }, {
       "id" : "f11",
       "type" : "UserTask",
       "name" : "ApprovalTask",
       "config" : {
-        "dialogId" : "jsf.form.archive.util.demo.ApprovalTask",
-        "startMethod" : "start(jsf.form.archive.util.demo.Data)",
-        "output" : {
+        "dialog" : "jsf.form.archive.util.demo.ApprovalTask:start(jsf.form.archive.util.demo.Data)",
+        "call" : {
           "map" : {
-            "out" : "result.data"
+            "param.data" : "in"
           }
         },
         "task" : {
           "name" : "<%=ivy.cms.co(\"/Processes/Order/Tasks/Approval/name\")%>",
           "skipTasklist" : true
         },
-        "call" : {
-          "params" : [
-            { "name" : "data", "type" : "jsf.form.archive.util.demo.Data" }
-          ],
+        "output" : {
           "map" : {
-            "param.data" : "in"
+            "out" : "result.data"
           }
         }
       },
       "visual" : {
         "at" : { "x" : 472, "y" : 224 }
       },
-      "connect" : { "id" : "f6", "to" : "f5" }
+      "connect" : [
+        { "id" : "f6", "to" : "f5" }
+      ]
     }, {
       "id" : "f7",
       "type" : "ProcessAnnotation",
@@ -113,6 +116,8 @@
         "at" : { "x" : 452, "y" : 80 },
         "size" : { "width" : 772, "height" : 132 }
       },
-      "connect" : { "id" : "f8", "to" : "f0" }
+      "connect" : [
+        { "id" : "f8", "to" : "f0" }
+      ]
     } ]
 }
