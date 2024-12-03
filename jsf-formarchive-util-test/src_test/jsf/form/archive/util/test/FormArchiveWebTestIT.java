@@ -39,7 +39,6 @@ public class FormArchiveWebTestIT {
 
 		// verify that screenshot of form1 is present
 		$(By.xpath("//img[@alt='InitTask.bmp']")).shouldBe(attribute("alt", "InitTask.bmp"));
-//		$(By.xpath("//img[@alt='InitTask.bmp']")).shouldBe(visible);
 	}
 
 }
