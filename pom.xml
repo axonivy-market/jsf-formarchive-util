@@ -3,7 +3,7 @@
   <groupId>com.axonivy.utils.jsfformarchive</groupId>
   <name>jsf-formarchive-util</name>
   <artifactId>jsf-form-archive-util-modules</artifactId>
-  <version>13.1.1-SNAPSHOT</version>
+  <version>13.1.2-SNAPSHOT</version>
   <packaging>pom</packaging>
 
   <modules>
