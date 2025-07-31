@@ -1,6 +1,11 @@
-name: Release-Build
+xname: Release-Build
 
 on: workflow_dispatch
+
+permissions:
+  contents: write
+  packages: write
+  pull-requests: write
 
 jobs:
   build:
