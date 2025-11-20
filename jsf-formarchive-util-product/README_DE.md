@@ -1,34 +1,34 @@
-# JSF Form Archiv Nutzen
+# JSF-Formulararchiv-Dienstprogramm
 
-Mit diesem Nutzen kannst du nehmen Schnappschüsse von eure JSF UIs und so Archiv
-in einem Nutzer-freundlichen Weg #welche (Nutzer) Inputs waren gemacht an gewiss
-Punkte #fristgemäß.
+Mit diesem Dienstprogramm können Sie Snapshots Ihrer JSF-Benutzeroberflächen
+erstellen und so auf benutzerfreundliche Weise archivieren, welche
+(Benutzer-)Eingaben zu bestimmten Zeitpunkten vorgenommen wurden.
 
-- Nach einer Form hat gewesen unterzogen du willst finden den geschaffenen
-  Schnappschuss Image auf das Fall Detail Seite.
-- Der Task Name will sein genommen wie Image Namen.
+- Nachdem ein Formular abgeschickt wurde, finden Sie das erstellte Snapshot-Bild
+  auf der Seite mit den Fall-Details.
+- Der Name der Aufgabe wird als Bildname verwendet.
 
 ## Demo
 
-Einfach unterzieh die Form und du willst einen Schnappschuss von der Form finden
-in die Fall Dokumente auf das Fall Detail Seite.
+Senden Sie einfach das Formular ab, und Sie finden einen Screenshot des
+Formulars in den Fallunterlagen auf der Seite mit den Falldetails.
 
-![Archiviert-Sample-Zwiegespräch](images/ArchivedSampleDialog.png)
+![Archivierter Beispiel-Dialog](images/ArchivedSampleDialog.png)
 
-![Fall-Dokumente-Zwiegespräch](images/CaseDocuments.png)
+![Case-Documents-Dialog](images/CaseDocuments.png)
 
 ## Einrichtung
 
-Zu nützen von diesem Nutzen du musst adaptieren dem "unterziehen" commandButton
-in den Zwiegesprächen in eurem Arbeitsgang jener du möchtest haben archiviert.
-Wechsel das #voreingestellt commandButton, jener darf #aussehen
+Um dieses Dienstprogramm nutzen zu können, müssen Sie die Schaltfläche „Senden”
+in den Dialogen Ihres Prozesses anpassen, die Sie archivieren möchten. Ändern
+Sie die Standard-Schaltfläche, die möglicherweise wie folgt aussieht
   ```
   <p:commandButton actionListener="#{logic.close()}" value="Proceed" update="form" icon="pi pi-check" />
   ```
-Zu
+zu
   ```
   <p:commandButton oncomplete="if(!args.validationFailed){saveCanvas()}" value="Proceed" />
   <ic:jsf.form.archive.util.SaveCanvas form="form" submitListener="#{logic.close()}" />
   ```
-Vielleicht möchtest du schaffen einen neuen Ausblick Tippt ein die #HTML Vorlage
-Präferenzen in eurem Designer mit dieser Abänderung.
+Möglicherweise möchten Sie mit dieser Änderung einen neuen Ansichtstyp in den
+HTML-Vorlageneinstellungen Ihres Designers erstellen.
