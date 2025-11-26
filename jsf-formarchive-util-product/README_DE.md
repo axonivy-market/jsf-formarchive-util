@@ -17,7 +17,7 @@ Formulars in den Fallunterlagen auf der Seite mit den Falldetails.
 
 ![Case-Documents-Dialog](images/CaseDocuments.png)
 
-## Einrichtung
+## Setup
 
 Um dieses Dienstprogramm nutzen zu können, müssen Sie die Schaltfläche „Senden”
 in den Dialogen Ihres Prozesses anpassen, die Sie archivieren möchten. Ändern
