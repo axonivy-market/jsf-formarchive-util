@@ -7,14 +7,14 @@
   <packaging>pom</packaging>
 
   <modules>
-    <module>${project.name}</module>
-    <module>${project.name}-demo</module>
-    <module>${project.name}-test</module>
-    <module>${project.name}-product</module>
+    <module>jsf-formarchive-util</module>
+    <module>jsf-formarchive-util-demo</module>
+    <module>jsf-formarchive-util-test</module>
+    <module>jsf-formarchive-util-product</module>
   </modules>
 
   <scm>
-    <developerConnection>scm:git:https://github.com/axonivy-market/${project.name}.git</developerConnection>
+    <developerConnection>scm:git:https://github.com/axonivy-market/jsf-formarchive-util.git</developerConnection>
     <tag>HEAD</tag>
   </scm>
 
