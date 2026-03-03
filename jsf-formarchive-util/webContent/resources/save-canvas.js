@@ -24,25 +24,25 @@ function saveCanvas() {
     var style = window.getComputedStyle(textareaElement);
 
     // Create replacement div with same text
-    var textareaOverlay = document.createElement('div');
-    textareaOverlay.textContent = textareaElement.value;
+    var overlayDiv = document.createElement('div');
+    overlayDiv.textContent = textareaElement.value;
 
     // Copy all computed styles to preserve appearance
     for (var i = 0; i < style.length; i++) {
       var prop = style[i];
-      textareaOverlay.style[prop] = style.getPropertyValue(prop);
+      overlayDiv.style[prop] = style.getPropertyValue(prop);
     }
 
-    textareaOverlay.style.position = 'absolute';
-    textareaOverlay.style.top = (textareaBounds.top + window.scrollY) + 'px';
-    textareaOverlay.style.left = (textareaBounds.left + window.scrollX) + 'px';
-    textareaOverlay.style.margin = '0';
-    textareaOverlay.style.whiteSpace = 'pre-wrap';
-    textareaOverlay.style.overflow = 'hidden';
-    textareaOverlay.style.pointerEvents = 'none';
-    document.body.appendChild(textareaOverlay);
+    overlayDiv.style.position = 'absolute';
+    overlayDiv.style.top = (textareaBounds.top + window.scrollY) + 'px';
+    overlayDiv.style.left = (textareaBounds.left + window.scrollX) + 'px';
+    overlayDiv.style.margin = '0';
+    overlayDiv.style.whiteSpace = 'pre-wrap';
+    overlayDiv.style.overflow = 'hidden';
+    overlayDiv.style.pointerEvents = 'none';
+    document.body.appendChild(overlayDiv);
     textareaElement.style.visibility = 'hidden';
-    textareaReplacements.push({ textareaElement: textareaElement, textareaOverlay: textareaOverlay });
+    textareaReplacements.push({ textareaElement: textareaElement, overlayDiv: overlayDiv });
   });
 
   html2canvas(document.body).then(function(canvas) {
@@ -53,7 +53,7 @@ function saveCanvas() {
     // Restore original textareas and remove replacement divs
     textareaReplacements.forEach(function(textareaReplacement) {
       textareaReplacement.textareaElement.style.visibility = '';
-      textareaReplacement.textareaOverlay.remove();
+      textareaReplacement.overlayDiv.remove();
     });
 
   });
