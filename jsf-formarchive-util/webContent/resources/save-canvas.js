@@ -1,4 +1,5 @@
 /**
+ * MARP-3812:
  * Saves a screenshot of the current page using html2canvas.
  *
  * To fix html2canvas limitation: textarea content cannot be renderred correctly, 
@@ -11,48 +12,48 @@
  */
 function saveCanvas() {
   // Store original textarea and their replacement divs
-  var replacements = [];
+  var textareaReplacements = [];
 
   // Process all textarea elements on the page
-  document.querySelectorAll('textarea').forEach(function(ta) {
-    if (ta.offsetParent === null) {
+  document.querySelectorAll('textarea').forEach(function(textareaElement) {
+    if (textareaElement.offsetParent === null) {
       return;
     }
-    var rect = ta.getBoundingClientRect();
+    var textareaBounds = textareaElement.getBoundingClientRect();
     // Get all computed CSS styles
-    var style = window.getComputedStyle(ta);
+    var style = window.getComputedStyle(textareaElement);
 
     // Create replacement div with same text
-    var div = document.createElement('div');
-    div.textContent = ta.value;
+    var textareaOverlay = document.createElement('div');
+    textareaOverlay.textContent = textareaElement.value;
 
     // Copy all computed styles to preserve appearance
     for (var i = 0; i < style.length; i++) {
       var prop = style[i];
-      div.style[prop] = style.getPropertyValue(prop);
+      textareaOverlay.style[prop] = style.getPropertyValue(prop);
     }
 
-    div.style.position = 'absolute';
-    div.style.top = (rect.top + window.scrollY) + 'px';
-    div.style.left = (rect.left + window.scrollX) + 'px';
-    div.style.margin = '0';
-    div.style.whiteSpace = 'pre-wrap';
-    div.style.overflow = 'hidden';
-    div.style.pointerEvents = 'none';
-    document.body.appendChild(div);
-    ta.style.visibility = 'hidden';
-    replacements.push({ ta: ta, div: div });
+    textareaOverlay.style.position = 'absolute';
+    textareaOverlay.style.top = (textareaBounds.top + window.scrollY) + 'px';
+    textareaOverlay.style.left = (textareaBounds.left + window.scrollX) + 'px';
+    textareaOverlay.style.margin = '0';
+    textareaOverlay.style.whiteSpace = 'pre-wrap';
+    textareaOverlay.style.overflow = 'hidden';
+    textareaOverlay.style.pointerEvents = 'none';
+    document.body.appendChild(textareaOverlay);
+    textareaElement.style.visibility = 'hidden';
+    textareaReplacements.push({ textareaElement: textareaElement, textareaOverlay: textareaOverlay });
   });
 
   html2canvas(document.body).then(function(canvas) {
-    var encodedimg = canvas.toDataURL("image/png");
-    document.querySelector('[id$=":save-canvas-form-content"]').value = encodedimg;
+    var encodedImage = canvas.toDataURL("image/png");
+    document.querySelector('[id$=":save-canvas-form-content"]').value = encodedImage;
     submitCanvasSnapRC();
   }).finally(function() {
-        // Restore original textareas and remove replacement divs
-    replacements.forEach(function(replacement) {
-      replacement.ta.style.visibility = '';
-      replacement.div.remove();
+    // Restore original textareas and remove replacement divs
+    textareaReplacements.forEach(function(textareaReplacement) {
+      textareaReplacement.textareaElement.style.visibility = '';
+      textareaReplacement.textareaOverlay.remove();
     });
 
   });
