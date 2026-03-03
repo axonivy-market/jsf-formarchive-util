@@ -26,14 +26,7 @@
 		update="#{requestForm}" />
 
 	<script src="#{resource['scripts/html2canvas.min.js']}" />
-	<script type="text/javascript">
-		function saveCanvas() {
-			html2canvas(document.body).then(function(canvas) {
-				var encodedimg = canvas.toDataURL("image/png");
-				$('[id$=":save-canvas-form-content"]').val(encodedimg);
-				submitCanvasSnapRC();
-			});
-		}
-	</script>
+	<script src="#{resource['resources/save-canvas.js']}" />
+
 </cc:implementation>
 </html>
