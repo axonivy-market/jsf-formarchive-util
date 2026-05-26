@@ -1,19 +1,13 @@
 {
-  "$schema" : "https://json-schema.axonivy.com/data-class/12.0.0/data-class.json",
+  "$schema" : "https://json-schema.axonivy.com/14.0-dev/project/data-class.json",
   "simpleName" : "Data",
   "namespace" : "jsf.form.archive.util.demo",
-  "isBusinessCaseData" : false,
   "fields" : [ {
-    "name" : "remarks",
-    "type" : "String",
-    "modifiers" : [ "PERSISTENT" ]
+    "name" : "remarks"
   }, {
-    "name" : "item",
-    "type" : "String",
-    "modifiers" : [ "PERSISTENT" ]
+    "name" : "item"
   }, {
     "name" : "amount",
-    "type" : "Number",
-    "modifiers" : [ "PERSISTENT" ]
+    "type" : "Number"
   } ]
 }
