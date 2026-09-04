@@ -1,11 +1,11 @@
 package com.axonivy.utils.jsfformarchiveutil.util;
 
-import javax.el.ELContext;
-import javax.el.ELException;
-import javax.el.ExpressionFactory;
-import javax.el.MethodExpression;
-import javax.faces.application.Application;
-import javax.faces.context.FacesContext;
+import jakarta.el.ELContext;
+import jakarta.el.ELException;
+import jakarta.el.ExpressionFactory;
+import jakarta.el.MethodExpression;
+import jakarta.faces.application.Application;
+import jakarta.faces.context.FacesContext;
 
 import org.apache.commons.lang3.ClassUtils;
 

@@ -4,6 +4,7 @@
   "namespace" : "jsf.form.archive.util.demo.ApprovalTask",
   "fields" : [ {
     "name" : "data",
-    "type" : "jsf.form.archive.util.demo.Data"
+    "type" : "jsf.form.archive.util.demo.Data",
+    "modifiers" : [ ]
   } ]
 }
