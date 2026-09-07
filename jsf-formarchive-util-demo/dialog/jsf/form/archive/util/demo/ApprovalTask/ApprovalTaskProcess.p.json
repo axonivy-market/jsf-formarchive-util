@@ -1,9 +1,9 @@
 {
-  "$schema" : "https://json-schema.axonivy.com/14.0-dev/project/process.json",
-  "id" : "166EDFD075BE6CB6",
+  "$schema" : "https://json-schema.axonivy.com/14.0-dev/project/process-2.json",
+  "id" : "1916AD2B37334E48",
   "kind" : "HTML_DIALOG",
   "config" : {
-    "data" : "jsf.form.archive.util.demo.OrderRequest.OrderRequestData"
+    "data" : "jsf.form.archive.util.demo.ApprovalTask.ApprovalTaskData"
   },
   "elements" : [ {
       "id" : "f0",
@@ -49,18 +49,18 @@
         "at" : { "x" : 224, "y" : 160 }
       }
     }, {
-      "id" : "f5",
+      "id" : "f6",
       "type" : "HtmlDialogMethodStart",
       "name" : "close()",
       "config" : {
         "signature" : "close",
-        "guid" : "191E97B969FE8560"
+        "guid" : "191E980778B5701B"
       },
       "visual" : {
         "at" : { "x" : 96, "y" : 160 }
       },
       "connect" : [
-        { "id" : "f6", "to" : "f4" }
+        { "id" : "f7", "to" : "f4" }
       ]
     } ]
 }

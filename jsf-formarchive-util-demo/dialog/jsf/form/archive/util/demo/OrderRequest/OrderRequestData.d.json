@@ -4,6 +4,7 @@
   "namespace" : "jsf.form.archive.util.demo.OrderRequest",
   "fields" : [ {
     "name" : "data",
-    "type" : "jsf.form.archive.util.demo.Data"
+    "type" : "jsf.form.archive.util.demo.Data",
+    "modifiers" : [ ]
   } ]
 }

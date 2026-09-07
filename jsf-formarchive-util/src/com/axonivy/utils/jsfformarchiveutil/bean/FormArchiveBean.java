@@ -8,8 +8,8 @@ import java.util.Base64;
 import java.util.List;
 import java.util.function.Predicate;
 
-import javax.faces.bean.ManagedBean;
-import javax.faces.bean.RequestScoped;
+import jakarta.inject.Named;
+import jakarta.enterprise.context.RequestScoped;
 
 import org.apache.commons.lang3.StringUtils;
 
@@ -23,7 +23,7 @@ import ch.ivyteam.ivy.workflow.document.IDocumentService;
 /**
  * Bean that saves the submitted Form in case documents
  */
-@ManagedBean
+@Named
 @RequestScoped
 public class FormArchiveBean {
 
